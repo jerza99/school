@@ -10,7 +10,7 @@
         $error = new errorController();
         $error->index();
     }
-    
+
     if(isset($_GET['controller'])){
         $nombre_controlador = $_GET['controller'].'Controller';
     }elseif (!isset($_GET['controller']) && !isset($_GET['action'])) {
@@ -19,7 +19,7 @@
         show_error();
         exit();
     }
-    
+
     if(class_exists($nombre_controlador)){	
         $controlador = new $nombre_controlador();
         

@@ -1,5 +1,7 @@
 <?php 
 
+    require_once 'models/usuario.php';
+
     class usuarioController{
         
         public function index(){
@@ -21,16 +23,21 @@
                     $usuario->setEmail($correo);
                     $usuario->setPassword($password);
 
+                     // Agregando declaraciones de depuración aquí
+            echo "Email: " . $usuario->getEmail() . "<br>"; // Depuración
+            echo "Password: " . $usuario->getPassword() . "<br>"; // Depuración
+
+
                     $result = $usuario->loguin();
+                    echo "Resultado de loguin: " . $result . "<br>"; // Depuración
 
                     if ($result == 'alumno') {
                         $_SESSION['user_type'] = 'alumno';
-                        echo 'Redirigiendo alumno';
-                        header("Location: " . base_url ."views/alumno/alumno.php");
+                        header("Location: " . base_url ."alumno/index");
                         exit;
                     } elseif ($result == 'profesor') {
                         $_SESSION['user_type'] = 'profesor';
-                        header("Location: " . base_url ."views/profesor/profesor.php");
+                        header("Location: " . base_url ."profesor/index");
                         exit;
                     }
                 }

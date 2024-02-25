@@ -39,7 +39,7 @@
         }
 
         public function getPassword() {
-            return password_hash($this->db->real_escape_string($this->password), PASSWORD_BCRYPT, ['cost' =>4]);
+            return password_hash($this->password, PASSWORD_BCRYPT, ['cost' =>  4]);
         }
 
         public function getImagen() {
@@ -55,15 +55,15 @@
         }
 
         public function setNombre($nombre){
-            $this->nombre = $this->db->real_escape_string($nombre);
+            $this->nombre = $nombre;
         }
 
         public function setApellidos($apellidos){
-            $this->apellidos = $this->db->real_escape_string($apellidos);
+            $this->apellidos = $apellidos;
         }
 
         public function setEmail($email){
-            $this->email = $this->db->real_escape_string($email);
+            $this->email = $email;
         }
 
         public function setPassword($password){

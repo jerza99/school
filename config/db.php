@@ -10,7 +10,7 @@ class Database {
             $host = 'localhost';
             $username = 'root';
             $password = '';
-            $database = 'tienda';
+            $database = 'school';
             $charset = 'utf8mb4';
 
             $dsn = "mysql:host=$host;dbname=$database;charset=$charset";
