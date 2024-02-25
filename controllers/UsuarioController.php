@@ -24,8 +24,8 @@
                     $usuario->setPassword($password);
 
                      // Agregando declaraciones de depuración aquí
-            echo "Email: " . $usuario->getEmail() . "<br>"; // Depuración
-            echo "Password: " . $usuario->getPassword() . "<br>"; // Depuración
+                    echo "Email: " . $usuario->getEmail() . "<br>"; // Depuración
+                    echo "Password: " . $usuario->getPassword() . "<br>"; // Depuración
 
 
                     $result = $usuario->loguin();

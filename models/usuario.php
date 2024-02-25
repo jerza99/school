@@ -39,7 +39,8 @@
         }
 
         public function getPassword() {
-            return password_hash($this->password, PASSWORD_BCRYPT, ['cost' =>  4]);
+            // return password_hash($this->password, PASSWORD_BCRYPT, ['cost' =>  4]);
+            return $this->password;
         }
 
         public function getImagen() {
