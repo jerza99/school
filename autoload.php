@@ -10,7 +10,7 @@ function controllers_autoload($classname) {
 
     foreach ($directories as $directory) {
         $name = $directory . $classname . '.php';
-        echo "Intentando cargar: {$name}<br>"; // Debug
+        // echo "Intentando cargar: {$name}<br>"; // Debug
 
         if (file_exists($name)) {
             require_once $name;
