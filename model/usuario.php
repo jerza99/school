@@ -12,6 +12,10 @@
 
         public function __construct(){
             $this->db = Database::connect();
+
+            if (!$this->db) {
+                throw new Exception("Error de conexion");
+            }
         }
         
         public function getId_alumno() {

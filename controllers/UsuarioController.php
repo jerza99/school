@@ -17,23 +17,21 @@
 
                     // Creo mi objeto 
                     $usuario = new Usuario();
-                    
+
                     $usuario->setEmail($correo);
                     $usuario->setPassword($password);
 
-                    $result =$usuario->loguin();
+                    $result = $usuario->loguin();
 
                     if ($result == 'alumno') {
-
                         $_SESSION['user_type'] = 'alumno';
-                        header("location:".base_url.'views/alumno/alumno.php');
+                        echo 'Redirigiendo alumno';
+                        header("Location: " . base_url ."views/alumno/alumno.php");
                         exit;
-
-
                     } elseif ($result == 'profesor') {
-
                         $_SESSION['user_type'] = 'profesor';
-                        header("location:".base_url.'views/profesor/profesor.php');
+                        header("Location: " . base_url ."views/profesor/profesor.php");
+                        exit;
                     }
                 }
             }

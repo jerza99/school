@@ -15,7 +15,7 @@
         <label for="contrasena">Contraseña</label>
         <input type="password" name="contrasena" id="contrasena">
 
-        <input type="submit" value="Iniciar sesion">
+        <input type="submit" value="Enviar">
 
     </form>
     </div>
