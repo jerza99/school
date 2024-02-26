@@ -23,13 +23,7 @@
                     $usuario->setEmail($correo);
                     $usuario->setPassword($password);
 
-                     // Agregando declaraciones de depuración aquí
-                    echo "Email: " . $usuario->getEmail() . "<br>"; // Depuración
-                    echo "Password: " . $usuario->getPassword() . "<br>"; // Depuración
-
-
                     $result = $usuario->loguin();
-                    echo "Resultado de loguin: " . $result . "<br>"; // Depuración
 
                     if ($result == 'alumno') {
                         $_SESSION['user_type'] = 'alumno';

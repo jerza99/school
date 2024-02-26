@@ -95,14 +95,13 @@
             $sql->execute();
             $profesor = $sql->fetch(PDO::FETCH_ASSOC);
 
-            if ($alumno && password_verify($this->password, $alumno['password'])) {
+            if ($alumno && $alumno['password'] == $password) {
                 return 'alumno';
-            }elseif ($profesor && password_verify($this->password, $profesor['password'])) {
+            }elseif ($profesor && $profesor['password'] == $password) {
                 return 'profesor';
             }else {
                 return false;
             }
-            
         }
     }
 
