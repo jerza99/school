@@ -1,0 +1,40 @@
+
+    /* Paleta de colores y utilidades */
+    :root {
+        --blanco: #ffffff;
+        --oscuro: #212121;
+        --primario: #FFC107;
+        --secundario: #0097A7;
+        --gris: #757575;
+        --grisClaro: #DFE9F3;
+    }
+
+    /* Globales */
+
+    * {
+        min-width: 0;
+        font: inherit;
+    }
+
+    *, *::before, *::after {
+        box-sizing: border-box;
+    }
+
+    img, video, svg {
+        display: block;
+        height: auto;
+        max-width: 100%;
+    }
+
+    body {
+        margin: 0;
+        min-height: 100dvh;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        text-wrap: balance;
+    }
+
+    p {
+        text-wrap: pretty;
+    }
