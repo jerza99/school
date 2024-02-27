@@ -5,6 +5,9 @@
     require_once 'config/db.php';
     require_once 'config/parameters.php';
 
+    require_once 'views/layout/header.php';
+    require_once 'views/layout/navegation.php';
+
     // funcion para mostrar los errores
     function show_error(){
         $error = new errorController();
@@ -12,7 +15,7 @@
     }
 
     if(isset($_GET['controller'])){
-        $nombre_controlador = $_GET['controller'].'Controller';
+        $nombre_controlador = $_GET['controller'].'Controller'; 
     }elseif (!isset($_GET['controller']) && !isset($_GET['action'])) {
         $nombre_controlador = controller_default;
     }else{
@@ -35,3 +38,5 @@
     }else{
         show_error();
     }
+
+    require_once 'views/layout/footer.php';
