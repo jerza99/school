@@ -2,10 +2,10 @@
     /* Paleta de colores y utilidades */
     :root {
         --blanco: #ffffff;
-        --oscuro: #212121;
-        --primario: #FFC107;
+        --oscuro: #000000;
+        --primario: #af00b8;
         --secundario: #0097A7;
-        --gris: #757575;
+        --gris: #e2e2e2;
         --grisClaro: #DFE9F3;
     }
 
@@ -37,4 +37,22 @@
 
     p {
         text-wrap: pretty;
+    }
+
+    /* Estilos de utilidad */
+
+    ul[role='list'], ol[role='list'] {
+        list-style: none;
+    }
+
+    html:focus-within{
+        scroll-behavior: smooth;
+    }
+
+    a:not([class]) {
+        text-decoration-skip-ink: auto;
+    }
+
+    input, button, textarea, select{
+        font: inherit;
     }
