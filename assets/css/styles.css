@@ -2,6 +2,7 @@
     /* Paleta de colores y utilidades */
     :root {
         --blanco: #ffffff;
+        --fondo: #dee2e6;
         --oscuro: #000000;
         --primario: #af00b8;
         --secundario: #0097A7;
@@ -20,15 +21,13 @@
         box-sizing: border-box;
     }
 
-    img, video, svg {
-        display: block;
-        height: auto;
-        max-width: 100%;
-    }
-
     body {
         margin: 0;
-        min-height: 100dvh;
+        min-height: 100vh;
+    }
+
+    html{
+        background: var(--fondo);
     }
 
     h1, h2, h3, h4, h5, h6 {
@@ -55,4 +54,23 @@
 
     input, button, textarea, select{
         font: inherit;
+    }
+
+    /* Estilo a login */
+
+    .form-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 80vh;
+        border: 2px solid rebeccapurple;
+    }
+
+
+    /* Estilos de nav */
+
+    .nav-content{
+        height: 50px;
+        border: 2px solid red;
     }

@@ -1,8 +1,10 @@
         </div>
         <!-- Pie de pagina -->
-        <footer>
-        <p>Desarrollado por Jerza &copy; <?= date('Y') ?></p>
-        </footer>
+        <div class="footer-content">
+            <footer class="footer">
+            <p>Desarrollado por Jerza &copy; <?= date('Y') ?></p>
+            </footer>
+        </div>
     </div>
 </body>
 <!-- Javascript links -->

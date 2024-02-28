@@ -6,7 +6,7 @@
     require_once 'config/parameters.php';
 
     require_once 'views/layout/header.php';
-    require_once 'views/layout/navegation.php';
+    require_once 'views/layout/nav.php';
 
     // funcion para mostrar los errores
     function show_error(){
