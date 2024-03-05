@@ -5,7 +5,7 @@
             <p>Desarrollado por Jerza &copy; <?= date('Y') ?></p>
             </footer>
         </div>
-    </div>
+    </div> 
 </body>
 <!-- Javascript links -->
     <!-- Bootstrap -->

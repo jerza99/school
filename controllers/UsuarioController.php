@@ -8,6 +8,10 @@
             require_once  'views/login.php';
         }
 
+        public function hola(){
+            echo 'hola';
+        }
+
         public function login(){
 
             if ($_SERVER['REQUEST_METHOD'] === 'POST') {

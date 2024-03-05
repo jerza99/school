@@ -2,9 +2,9 @@
     /* Paleta de colores y utilidades */
     :root {
         --blanco: #ffffff;
-        --fondo: #dee2e6;
+        --fondo: #f8f9fa;
         --oscuro: #000000;
-        --primario: #af00b8;
+        --primario: #74c69d;
         --secundario: #0097A7;
         --gris: #e2e2e2;
         --grisClaro: #DFE9F3;
@@ -17,7 +17,11 @@
         font: inherit;
     }
 
-    *, *::before, *::after {
+    *,
+    *::before,
+    *::after {
+        padding: 0;
+        margin: 0;
         box-sizing: border-box;
     }
 
@@ -28,6 +32,7 @@
 
     html{
         background: var(--fondo);
+        box-sizing: border-box; /* Hack para Box Model **/
     }
 
     h1, h2, h3, h4, h5, h6 {
@@ -59,18 +64,76 @@
     /* Estilo a login */
 
     .form-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        height: 80vh;
         border: 2px solid rebeccapurple;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 30%;
+        height: 50%;
+        border-radius: 50px;
     }
-
-
     /* Estilos de nav */
 
-    .nav-content{
-        height: 50px;
-        border: 2px solid red;
+    /* Estilos generales */
+
+
+    /* Estilos de navegación */
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #333;
+        color: #fff;
+        padding: 50px;
+    }
+
+    .navbar-brand a {
+        color: #fff;
+        text-decoration: none;
+    }
+
+    .navbar-menu {
+        list-style: none;
+        display: flex;
+    }
+
+    .navbar-menu li {
+        margin-left: 20px;
+    }
+
+    .navbar-menu li a {
+        color: #fff;
+        text-decoration: none;
+    }
+
+    /* Estilos del menú desplegable */
+    .menu-icon {
+        display: none;
+    }
+
+    .menu-icon a {
+        display: block;
+        width: 30px;
+        height: 22px;
+        position: relative;
+    }
+
+    .menu-icon a span {
+        display: block;
+        width: 100%;
+        height: 4px;
+        background-color: #fff;
+        position: absolute;
+        left: 0;
+        transition: all 0.3s ease;
+    }
+
+    /* Estilos de footer */
+
+    .footer-content{
+        border: 2px solid greenyellow;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
     }
