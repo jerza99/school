@@ -10,6 +10,7 @@
 
         public function hola(){
             echo 'hola';
+            echo 123;
         }
 
         public function login(){
