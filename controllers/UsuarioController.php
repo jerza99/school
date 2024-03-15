@@ -7,12 +7,7 @@
         public function index(){
             require_once  'views/login.php';
         }
-
-        public function hola(){
-            echo 'hola';
-            echo 123;
-        }
-
+        
         public function login(){
 
             if ($_SERVER['REQUEST_METHOD'] === 'POST') {
