@@ -11,6 +11,7 @@
         private $db;
 
         public function __construct(){
+            
             $this->db = Database::connect();
 
             if (!$this->db) {
@@ -74,6 +75,8 @@
         public function setImagen($imagen){
             $this->imagen = $imagen;
         }
+
+        public function register(){}
 
         public function loguin(){
             // variables para correo y password

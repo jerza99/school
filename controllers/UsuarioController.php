@@ -3,6 +3,16 @@
     require_once 'models/usuario.php';
 
     class usuarioController{
+
+        public function register(){
+            
+            if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+                
+            } else {
+                # code...
+            }
+            
+        }
         
         public function login(){
 
