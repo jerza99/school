@@ -76,33 +76,37 @@
         }
 
         public function loguin(){
-
             // variables para correo y password
             $email = $this->email;
             $password = $this->password;
-
-            // Consutla a la tabla alumno
+        
+            // Consulta a la tabla alumno
             $consulta = "SELECT * FROM alumno WHERE email = :email";
             $sql = $this->db->prepare($consulta);
             $sql->bindParam(':email', $email);
             $sql->execute();
             $alumno = $sql->fetch(PDO::FETCH_ASSOC);
-
-            // Consutla a la tabla profesor
+        
+            // Consulta a la tabla profesor
             $consulta = "SELECT * FROM profesor WHERE email = :email";
             $sql = $this->db->prepare($consulta);
             $sql->bindParam(':email', $email);
             $sql->execute();
             $profesor = $sql->fetch(PDO::FETCH_ASSOC);
-
+        
+            // Verifica si el usuario es alumno
             if ($alumno && $alumno['password'] == $password) {
                 return 'alumno';
-            }elseif ($profesor && $profesor['password'] == $password) {
+            }
+            // Verifica si el usuario es profesor
+            elseif ($profesor && $profesor['password'] == $password) {
                 return 'profesor';
-            }else {
+            }
+            else {
                 return false;
             }
         }
+        
     }
 
 ?>

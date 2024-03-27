@@ -5,9 +5,6 @@
     require_once 'config/db.php';
     require_once 'config/parameters.php';
 
-    require_once 'views/layout/header.php';
-    require_once 'views/layout/nav.php';
-
     // funcion para mostrar los errores
     function show_error(){
         $error = new errorController();
@@ -38,5 +35,3 @@
     }else{
         show_error();
     }
-
-    require_once 'views/layout/footer.php';

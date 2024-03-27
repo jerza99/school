@@ -1,0 +1,52 @@
+
+estructura de proyecto
+carpeta de proyecto: ESCUELA
+
+    carpetas +: 
+        +assets
+            subcarpeta-:
+                -img
+                -css
+                arichivos de -css
+                nomalize.css
+                styles.cc  
+        +config
+            arichivos de +config
+                db.php
+                parameters.php
+        +controllers
+            arichivos de +controllers-
+                -alumnocontroller.php
+                -errorcontroller.php
+                -profesorcontroller.php
+                -usuariocontroller.php
+                -viewcontroller.php
+        +database
+            arichivos de +database-
+                -escuela.sql
+        +models
+            arichivos de +models-
+                -usuario.php
+        +views
+            arichivos de +views-
+                -login.php
+                -registro.php
+            subcarpeta-:
+                -alumno
+                -profesor
+                -layout
+                arichivos de -alumno
+                    -alumno.php  
+                arichivos de -profesor
+                    -profesor.php 
+                arichivos de -layout
+                    -nav.php   
+                    -footer.php   
+                    -header.php   
+
+archifos fuera de la carpetas 
+    index.php
+    autoloader.php
+    .htaccess
+
+

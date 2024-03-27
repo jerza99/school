@@ -4,10 +4,6 @@
 
     class usuarioController{
         
-        public function index(){
-            require_once  'views/login.php';
-        }
-        
         public function login(){
 
             if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -28,11 +24,11 @@
 
                     if ($result == 'alumno') {
                         $_SESSION['user_type'] = 'alumno';
-                        header("Location: " . base_url ."alumno/index");
+                        header("Location: " . base_url ."view/alumno");
                         exit;
                     } elseif ($result == 'profesor') {
                         $_SESSION['user_type'] = 'profesor';
-                        header("Location: " . base_url ."profesor/index");
+                        header("Location: " . base_url ."view/profesor");
                         exit;
                     }
                 }
