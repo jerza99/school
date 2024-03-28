@@ -8,6 +8,7 @@
         private $email;	
         private $password;	
         private $imagen;
+        private $rol;
         private $db;
 
         public function __construct(){
@@ -48,6 +49,10 @@
             return $this->imagen;
         }
 
+        public function getRol(){
+            return $this->rol;
+        }
+
         public function setId_alumno($id_alumno){
             $this->id_alumno = $id_alumno;
         }
@@ -76,7 +81,41 @@
             $this->imagen = $imagen;
         }
 
-        public function register(){}
+        public function setRol($rol){
+            $this->rol = $rol;
+        }
+
+        public function register(){
+
+            // Variables
+            $nombre = $this->nombre;
+            $apellidos = $this->apellidos;
+            $email = $this->email;
+            $password = $this->password;
+            $rol = $this->rol;
+
+            // consultar si es alumno o profesor y despues insertar los datos
+            if ($rol == 'alumno') {
+                $insert = "INSERT INTO alumno (nombre, apellidos, email, password, imagen) VALUES (:nombre, :apellidos, :email, :password)";
+            } elseif ($rol == 'profesor') {
+                $insert = "INSERT INTO profesor (nombre, apellidos, email, password, imagen) VALUES (:nombre, :apellidos, :email, :password)";
+            } else {
+                throw new Exception("Error Rol Invalido");
+            } 
+
+            // preparar la insersion de datos
+            $sql = $this->db->prepare($insert);
+
+            // Ejecutar sql con los parametros 
+            $sql->execute([
+                ':nombre' => $nombre ,
+                ':apellidos' => $apellidos ,
+                ':email' => $email ,
+                ':password' => $password ,
+            ]);
+
+            return $sql->rowCount();
+        }
 
         public function loguin(){
             // variables para correo y password
