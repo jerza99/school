@@ -96,9 +96,9 @@
 
             // consultar si es alumno o profesor y despues insertar los datos
             if ($rol == 'alumno') {
-                $insert = "INSERT INTO alumno (nombre, apellidos, email, password, imagen) VALUES (:nombre, :apellidos, :email, :password)";
+                $insert = "INSERT INTO alumno (nombre, apellidos, email, password) VALUES (:nombre, :apellidos, :email, :password)";
             } elseif ($rol == 'profesor') {
-                $insert = "INSERT INTO profesor (nombre, apellidos, email, password, imagen) VALUES (:nombre, :apellidos, :email, :password)";
+                $insert = "INSERT INTO profesor (nombre, apellidos, email, password) VALUES (:nombre, :apellidos, :email, :password)";
             } else {
                 throw new Exception("Error Rol Invalido");
             } 

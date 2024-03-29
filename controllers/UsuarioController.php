@@ -13,7 +13,6 @@
                     isset($_POST['rol'])) {
                         
                         // Creo variables y les asigno lo que me llega por el metodo 'post'
-
                         $nombre = $_POST['nombre'];
                         $apellidos = $_POST['apellidos'];
                         $correo = $_POST['correo'];
@@ -68,6 +67,9 @@
                     }
                 }
             }
+        }
+        public function destroySession(){
+            
         }
     }
 ?>
