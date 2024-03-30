@@ -8,5 +8,5 @@
             <input class="form-inputs" type="password" name="contrasena" id="contrasena" required>
             <button class="submit" type="submit">Sign in</button>
         </form>
-        <a href="<?=base_url?>view/register">Registarse</a>
+        <a href="<?=base_url?>views/registro.php">Registarse</a>
     </div>

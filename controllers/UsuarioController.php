@@ -56,20 +56,31 @@
 
                     $result = $usuario->loguin();
 
+                    // Iniciar la sesión si no está iniciada
+                    if (session_status() == PHP_SESSION_NONE) {
+                        session_start();
+                    }
+
                     if ($result == 'alumno') {
                         $_SESSION['user_type'] = 'alumno';
-                        header("Location: " . base_url ."view/alumno");
+                        var_dump($_SESSION['user_type']);
+                        header("Location: " . base_url ."views/alumno/alumno.php");
                         exit;
                     } elseif ($result == 'profesor') {
                         $_SESSION['user_type'] = 'profesor';
-                        header("Location: " . base_url ."view/profesor");
+                        header("Location: " . base_url ."views/profesor/profesor.php");
+                        exit;
+                    }else {
+                        header("Location: " . base_url ."views/login.php");
                         exit;
                     }
                 }
             }
         }
         public function destroySession(){
-            
+            session_destroy();
+            header("Location: " . base_url ."views/login.php");
+            exit;
         }
     }
 ?>

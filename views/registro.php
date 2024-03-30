@@ -1,4 +1,5 @@
-    
+ <?php require '../config/parameters.php';?>
+   
    <div class="form-container">
         <form class="form-content" action="<?=base_url?>usuario/register" method="post" enctype="multipart/form-data">
             <p class="form-title">Registrarse</p>
