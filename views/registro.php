@@ -1,4 +1,16 @@
- <?php require '../config/parameters.php';?>
+<?php require '../config/parameters.php';?>
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+
+    <!-- links -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    
+ </head>
+ <body>
    
    <div class="form-container">
         <form class="form-content" action="<?=base_url?>usuario/register" method="post" enctype="multipart/form-data">
@@ -23,3 +35,8 @@
         </form>
         <a href="<?=base_url?>view/index">Iniciar sesión</a>
     </div>
+
+    <!-- Scripts js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+ </body>
+ </html>

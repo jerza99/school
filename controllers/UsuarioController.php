@@ -63,7 +63,6 @@
 
                     if ($result == 'alumno') {
                         $_SESSION['user_type'] = 'alumno';
-                        var_dump($_SESSION['user_type']);
                         header("Location: " . base_url ."views/alumno/alumno.php");
                         exit;
                     } elseif ($result == 'profesor') {
@@ -81,6 +80,18 @@
             session_destroy();
             header("Location: " . base_url ."views/login.php");
             exit;
+        }
+
+        public function updatePass(){
+            $actualizar = new Usuario();
+
+            $result = $actualizar->updatePassword();
+
+            if ($result) {
+                echo 'Actualizacion exitosa';
+            }else {
+                echo 'No se pudo actualizar';
+            }
         }
     }
 ?>

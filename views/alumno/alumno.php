@@ -15,7 +15,7 @@
      include('../layout/nav.php');
 ?>
     <!-- Contenido específico de la página de alumno o profesor -->
-    <h1>Bienvenido alumno:,</h1>
+    <h1>Bienvenido alumno: <?php  ?></h1>
 <?php
     // Incluye el footer
     include('../layout/footer.php');

@@ -41,8 +41,7 @@
         }
 
         public function getPassword() {
-            // return password_hash($this->password, PASSWORD_BCRYPT, ['cost' =>  4]);
-            return $this->password;
+            return password_hash($this->password, PASSWORD_DEFAULT, ['cost' =>  12]);
         }
 
         public function getImagen() {
@@ -62,15 +61,15 @@
         }
 
         public function setNombre($nombre){
-            $this->nombre = $nombre;
+            $this->nombre =$nombre; 
         }
 
         public function setApellidos($apellidos){
-            $this->apellidos = $apellidos;
+            $this->apellidos =$apellidos;
         }
 
         public function setEmail($email){
-            $this->email = $email;
+            $this->email =$email;
         }
 
         public function setPassword($password){
@@ -85,6 +84,28 @@
             $this->rol = $rol;
         }
 
+        public function updatePassword(){
+            try {
+                // Actualizar alumno
+                $consulta = $this->db->query("SELECT id_alumno, password FROM alumno");
+                while ($usuario = $consulta->fetch(PDO::FETCH_ASSOC)) {
+                    $hash = password_hash($usuario['password'], PASSWORD_DEFAULT);
+                    $this->db->exec("UPDATE alumno SET password = '$hash' WHERE id_alumno = " . $usuario['id_alumno']);
+                }
+        
+                // Actualizar profesor
+                $consulta = $this->db->query("SELECT id_profesor, password FROM profesor");
+                while ($usuario = $consulta->fetch(PDO::FETCH_ASSOC)) {
+                    $hash = password_hash($usuario['password'], PASSWORD_DEFAULT);
+                    $this->db->exec("UPDATE profesor SET password = '$hash' WHERE id_profesor = " . $usuario['id_profesor']);
+                }
+                return true; 
+            } catch (Exception $e) {
+                return false; 
+            }
+        }
+        
+
         public function register(){
 
             // Variables
@@ -93,6 +114,9 @@
             $email = $this->email;
             $password = $this->password;
             $rol = $this->rol;
+
+            // Hashear la contraseña
+            $hashPass = password_hash($password, PASSWORD_DEFAULT, ['cost' => 12]);
 
             // consultar si es alumno o profesor y despues insertar los datos
             if ($rol == 'alumno') {
@@ -111,7 +135,7 @@
                 ':nombre' => $nombre ,
                 ':apellidos' => $apellidos ,
                 ':email' => $email ,
-                ':password' => $password ,
+                ':password' => $hashPass ,
             ]);
 
             return $sql->rowCount();
