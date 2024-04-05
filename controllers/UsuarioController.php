@@ -1,17 +1,21 @@
-<?php 
+<?php
 
     require_once 'models/usuario.php';
 
     class usuarioController{
 
+        public function index(){
+            require_once 'views/login.php';
+        }
+
         public function register(){
-            
+
             if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
-                if (isset($_POST['nombre']) && isset($_POST['apellidos']) && 
-                    isset($_POST['correo']) && isset($_POST['contrasena']) && 
+                if (isset($_POST['nombre']) && isset($_POST['apellidos']) &&
+                    isset($_POST['correo']) && isset($_POST['contrasena']) &&
                     isset($_POST['rol'])) {
-                        
+
                         // Creo variables y les asigno lo que me llega por el metodo 'post'
                         $nombre = $_POST['nombre'];
                         $apellidos = $_POST['apellidos'];
@@ -19,7 +23,7 @@
                         $password = $_POST['contrasena'];
                         $rol = $_POST['rol'];
 
-                        // Creo mi objeto 
+                        // Creo mi objeto
                         $usuario = new Usuario();
 
                         $usuario->setNombre($nombre);
@@ -48,7 +52,7 @@
                     $correo = $_POST['correo'];
                     $password = $_POST['contrasena'];
 
-                    // Creo mi objeto 
+                    // Creo mi objeto
                     $usuario = new Usuario();
 
                     $usuario->setEmail($correo);
@@ -62,17 +66,21 @@
                     }
 
                     if ($result == 'alumno') {
+
                         $_SESSION['user_type'] = 'alumno';
-                        header("Location: " . base_url ."views/alumno/alumno.php");
+                        header("Location: " . base_url."views/alumno/alumno.php");
                         exit;
                     } elseif ($result == 'profesor') {
+
                         $_SESSION['user_type'] = 'profesor';
-                        header("Location: " . base_url ."views/profesor/profesor.php");
+                        header("Location: " . base_url."views/profesor/profesor.php");
                         exit;
-                    }else {
-                        header("Location: " . base_url ."views/login.php");
+                    } else {
+                        
+                        header("Location: " . base_url."views/login.php");
                         exit;
                     }
+                    
                 }
             }
         }

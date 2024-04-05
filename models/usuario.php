@@ -161,11 +161,11 @@
             $profesor = $sql->fetch(PDO::FETCH_ASSOC);
         
             // Verifica si el usuario es alumno
-            if ($alumno && $alumno['password'] == $password) {
+            if ($alumno && password_verify($password, $alumno['password'])) {
                 return 'alumno';
             }
             // Verifica si el usuario es profesor
-            elseif ($profesor && $profesor['password'] == $password) {
+            elseif ($profesor && password_verify($password, $profesor['password'])) {
                 return 'profesor';
             }
             else {

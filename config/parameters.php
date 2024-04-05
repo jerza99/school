@@ -6,7 +6,7 @@
     define("base_url","http://localhost/Proyects/Escuela/");
 
     // Constante para determinar qué controlador debe cargarse por defecto.
-    define("controller_default", "viewController");
+    define("controller_default", "usuarioController");
 
     // Constante para determinar qué acción del controlador debe ejecutarse por defecto.
     define("action_default","index");
