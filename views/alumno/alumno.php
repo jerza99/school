@@ -15,7 +15,8 @@
      include('../layout/nav.php');
 ?>
     <!-- Contenido específico de la página de alumno o profesor -->
-    <h1>Bienvenido alumno: <?php  ?></h1>
+    <h1>Bienvenido alumno: <?php $_SESSION['user_type'] ?></h1>
+    <a href="<?=base_url?>usuario/destroySession"></a>
 <?php
     // Incluye el footer
     include('../layout/footer.php');

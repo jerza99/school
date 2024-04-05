@@ -76,7 +76,7 @@
                         header("Location: " . base_url."views/profesor/profesor.php");
                         exit;
                     } else {
-                        
+
                         header("Location: " . base_url."views/login.php");
                         exit;
                     }
@@ -86,7 +86,7 @@
         }
         public function destroySession(){
             session_destroy();
-            header("Location: " . base_url ."views/login.php");
+            header("Location: " . base_url ."usuario/index");
             exit;
         }
 

@@ -33,7 +33,7 @@
             <input class="form-inputs" type="file" name="imagen" id="imagen" accept="image/*"> -->
             <button class="submit" type="submit">Registrarse</button>
         </form>
-        <a href="<?=base_url?>view/index">Iniciar sesión</a>
+        <a href="<?=base_url?>usuario/index">Iniciar sesión</a>
     </div>
 
     <!-- Scripts js -->
