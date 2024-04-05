@@ -162,17 +162,15 @@
         
             // Verifica si el usuario es alumno
             if ($alumno && password_verify($password, $alumno['password'])) {
-                return 'alumno';
+                return (object) $alumno;
             }
             // Verifica si el usuario es profesor
             elseif ($profesor && password_verify($password, $profesor['password'])) {
-                return 'profesor';
+                return (object) $profesor;
             }
             else {
                 return false;
             }
         }
-        
     }
-
 ?>

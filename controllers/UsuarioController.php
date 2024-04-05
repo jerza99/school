@@ -65,22 +65,21 @@
                         session_start();
                     }
 
-                    if ($result == 'alumno') {
-
-                        $_SESSION['user_type'] = 'alumno';
-                        header("Location: " . base_url."views/alumno/alumno.php");
-                        exit;
-                    } elseif ($result == 'profesor') {
-
-                        $_SESSION['user_type'] = 'profesor';
-                        header("Location: " . base_url."views/profesor/profesor.php");
-                        exit;
+                    // Verificar quien se logueo
+                    if ($result) {
+                        if (isset($result->id_alumno)) {
+                            $_SESSION['user_type'] = $result;
+                            header("Location: " . base_url."views/alumno/alumno.php");
+                            exit;
+                        }elseif (isset($result->id_profesor)) {
+                            $_SESSION['user_type'] = $result;
+                            header("Location: " . base_url."views/profesor/profesor.php");
+                            exit;
+                        }
                     } else {
-
                         header("Location: " . base_url."views/login.php");
                         exit;
                     }
-                    
                 }
             }
         }
