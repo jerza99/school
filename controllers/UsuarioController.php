@@ -8,6 +8,10 @@
             require_once 'views/login.php';
         }
 
+        public function registro(){
+            require_once 'views/registro.php';
+        }
+
         public function register(){
 
             if ($_SERVER['REQUEST_METHOD'] === 'POST') {

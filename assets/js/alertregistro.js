@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     icon: 'success',
                     confirmButtonText: 'Aceptar'
                 }).then((result) => {
-                    window.location.href = base_url + 'view/index';
+                    window.location.href = base_url + 'usuario/index';
                 });
             } else {
                 Swal.fire({
@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     icon: 'error',
                     confirmButtonText: 'Aceptar'
                 }).then((result) => {
-                    window.location.href = base_url + 'ruta/a/la/pagina/de/registro';
+                    window.location.href = base_url + 'usuario/registro';
                 });
             }
         })
@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 icon: 'error',
                 confirmButtonText: 'Aceptar'
             }).then((result) => {
-                window.location.href = base_url + 'ruta/a/la/pagina/de/registro';
+                window.location.href = base_url + 'usuario/registro';
             });
         });
     });
