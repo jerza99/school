@@ -35,9 +35,9 @@
                         $result = $usuario->register();
 
                         if ($result > 0) {
-                            echo 'Registro exitoso';
+                            echo json_encode(['success' => true, 'message' => 'Registro exitoso']);
                         }else {
-                            echo 'No se pudo registrar';
+                            echo json_encode(['success' => false, 'message' => 'No se pudo registrar']);
                         }
                 }
             }

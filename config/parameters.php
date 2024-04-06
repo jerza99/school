@@ -3,7 +3,7 @@
 
     //  Se definen constantes 
     // Constante para la base de la url que tendra el proyecto 
-    define("base_url","http://localhost/Proyects/Escuela/");
+    define("base_url","http://localhost/Proyects/school/");
 
     // Constante para determinar qué controlador debe cargarse por defecto.
     define("controller_default", "usuarioController");
