@@ -61,6 +61,12 @@
         font: inherit;
     }
 
+    /* Estilos generales */
+
+    a {
+        text-decoration: none;
+    }
+
     /* Estilo a login */
 
     .form-container {
@@ -72,6 +78,19 @@
         width: 30%;
         height: 50%;
         border-radius: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .footer-content {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex-grow: 1;
     }
 
     /* Estilos de navegación */
